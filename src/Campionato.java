@@ -136,7 +136,8 @@ public class Campionato {
 
 	public List<Partita> ricercaPerSquadra(String nomeSq) {
 		for (String key : this.partite_squadre.keySet()) {
-			if (key.equalsIgnoreCase(nomeSq))
+			if ( key.toLowerCase().startsWith(nomeSq.toLowerCase()) ) 
+			//if (key.equalsIgnoreCase(nomeSq))
 				return this.partite_squadre.get(key);
 		}
 		return null;
